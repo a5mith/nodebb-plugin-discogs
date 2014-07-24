@@ -1,0 +1,24 @@
+{
+  "name": "nodebb-plugin-discogs",
+  "version": "0.0.1",
+  "description": "Turns a short code (dc#BETALP07) into a card containing full info on that release.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a5mith/nodebb-plugin-discogs"
+  },
+  "keywords": [
+    "nodebb",
+    "plugin",
+    "github"
+  ],
+  "author": "Julian Lam <julian@designcreateplay.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/a5mith/nodebb-plugin-discogs/issues"
+  },
+  "dependencies": {
+    "lru-cache": "^2.5.0",
+    "request": "^2.34.0"
+  }
+}

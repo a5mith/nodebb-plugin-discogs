@@ -1,0 +1,16 @@
+{
+    "id": "nodebb-plugin-discogs",
+    "name": "Discogs Embedding",
+    "description": "Turns a short code (dc#BETALP07) into a card containing full info on that release.",
+    "url": "https://github.com/a5mith/nodebb-plugin-discogs",
+    "library": "./index.js",
+    "templates": "templates",
+    "less": [
+        "less/default.less"
+    ],
+    "hooks": [
+        { "hook": "action:app.load", "method": "init" },
+        { "hook": "filter:post.parse", "method": "parse", "priority": 6 }
+    ],
+    "compatibility": "~0.4.0"
+}
