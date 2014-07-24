@@ -74,7 +74,18 @@ var getDiscog = function(discogsKey, callback) {
         }
     }, function(err, response, body) {
         if (!err && response.statusCode === 200) {
-            callback(null, JSON.parse(body));
+            callback(null, JSON.parse(body)),
+                returnData = {
+                    results: style,
+                    results: thumb,
+                    results: format,
+                    results: uri,
+                    results: label,
+                    results: year,
+                    results: catno,
+                    results: genre,
+                    results: title
+                };
         } else {
             console.log(err, response);
         }
