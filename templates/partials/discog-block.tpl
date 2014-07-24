@@ -1,13 +1,13 @@
 <div class="row">
     <!-- BEGIN discoginfo -->
     <div class="col-md-6">
-        <a href="http://discogs.com{results.uri}" target="_blank">
-            <img class="img-responsive" src="{results.thumb}" title="{results.catno}" />
-            <h3>{results.title}</h3>
-            <span>{results.style}</span>
+        <a href="http://discogs.com{discoginfo.results.uri}" target="_blank">
+            <img class="img-responsive" src="{discoginfo.results.thumb}" title="{discoginfo.results.catno}" />
+            <h3>{discoginfo.results.title}</h3>
+            <span>{discoginfo.results.style}</span>
             <ul>
-                <li>{results.label}</li>
-                <li>{results.year}</li>
+                <li>{discoginfo.results.label}</li>
+                <li>{discoginfo.results.year}</li>
             </ul>
         </a>
     </div>
