@@ -62,13 +62,14 @@ Embed.parse = function(raw, callback) {
         }
     });
 };
+var client = discogs({userAgent: '35hz.co.uk'});
 
 var getDiscog = function(discogsKey, callback) {
     var discogNum = discogsKey.split('#')[1];
     console.log('getting discog info', discogNum);
 
     request.get({
-        url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1'
+        url: '//api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1'
     }, function(err, response, body) {
         if (response.statusCode === 200) {
             callback(null, JSON.parse(body));
