@@ -73,7 +73,7 @@ var getDiscog = function(discogsKey, callback) {
             'User-Agent': '35hz'
         }
     }, function(err, response, body) {
-        if (response.statusCode === 200) {
+        if (!err && response.statusCode === 200) {
             callback(null, JSON.parse(body));
         } else {
             console.log(err, response);
