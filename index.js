@@ -45,7 +45,7 @@ Embed.parse = function(raw, callback) {
     }, function(err, discoginfo) {
         if (!err) {
             // Filter out non-existant comics
-            discogsinfo = discogsinfo.filter(function(issue) {
+            discoginfo = discoginfo.filter(function(issue) {
                 return issue;
             });
 
