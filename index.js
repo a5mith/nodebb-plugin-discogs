@@ -73,8 +73,8 @@ var getDiscog = function(discogsKey, callback) {
             'User-Agent': '35hz'
         }
     }, function(err, response, body) {
-        if (!err && response.statusCode === 200) {
-            callback(null, JSON.parse(body)),
+        if (response.statusCode === 200) {
+            var results = JSON.parse(body),
                 returnData = {
                     uri: results.uri,
                     thumbnail: results.thumb,
@@ -85,7 +85,7 @@ var getDiscog = function(discogsKey, callback) {
                     year: results.year
                 };
 
-            callback(null, returnData);            
+            callback(null, returnData);
         } else {
             console.log(err, response);
         }
