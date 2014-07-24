@@ -10,8 +10,10 @@ var	request = require('request'),
     Embed = {},
     cache, appModule;
 
-Embed.init = function(app, middleware, controllers) {
+Embed.init = function(app, middleware, controllers, callback) {
     appModule = app;
+
+    callback();
 };
 
 Embed.parse = function(raw, callback) {
