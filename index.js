@@ -76,15 +76,13 @@ var getDiscog = function(discogsKey, callback) {
         if (!err && response.statusCode === 200) {
             callback(null, JSON.parse(body)),
                 returnData = {
-                    results: style,
-                    results: thumb,
-                    results: format,
-                    results: uri,
-                    results: label,
-                    results: year,
-                    results: catno,
-                    results: genre,
-                    results: title
+                    uri: results.uri,
+                    thumbnail: results.thumb,
+                    catno: results.catno,
+                    title: results.title,
+                    state: results.style,
+                    label: results.label,
+                    year: results.year
                 };
         } else {
             console.log(err, response);
