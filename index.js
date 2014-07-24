@@ -35,7 +35,7 @@ Embed.parse = function(raw, callback) {
         if (cache.has(discogsKey)) {
             next(null, cache.get(discogsKey));
         } else {
-            getComic(discogsKey, function(err, discogsObj) {
+            getDiscog(discogsKey, function(err, discogsObj) {
                 if (err) {
                     return next(err);
                 }
@@ -46,7 +46,7 @@ Embed.parse = function(raw, callback) {
         }
     }, function(err, discoginfo) {
         if (!err) {
-            // Filter out non-existant comics
+            // Filter
             discoginfo = discoginfo.filter(function(issue) {
                 return issue;
             });
