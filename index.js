@@ -6,7 +6,7 @@ var	request = require('request'),
     S = module.parent.require('string'),
     meta = module.parent.require('./meta'),
 
-    discogsRegex = /dc#\d+/gm,
+    discogsRegex = /dc#\w+/gm,
     Embed = {},
     cache, appModule;
 
