@@ -76,7 +76,7 @@ var getDiscog = function(discogsKey, callback) {
         if (response.statusCode === 200) {
             callback(null, JSON.parse(body));
         } else {
-            callback(err);
+            console.log(err, response);
         }
     });
 };
