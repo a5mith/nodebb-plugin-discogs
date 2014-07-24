@@ -80,7 +80,7 @@ var getDiscog = function(discogsKey, callback) {
                     thumbnail: results.thumb,
                     catno: results.catno,
                     title: results.title,
-                    state: results.style,
+                    style: results.style,
                     label: results.label,
                     year: results.year
                 };
