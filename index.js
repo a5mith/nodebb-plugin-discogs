@@ -74,6 +74,7 @@ var getDiscog = function(discogsKey, callback) {
         }
     }, function(err, response, body) {
         if (response.statusCode === 200) {
+            console.log('Received error 200');
             var results = JSON.parse(body),
                 returnData = {
                     uri: results.uri,
