@@ -1,5 +1,5 @@
 <div class="row">
-    <!-- BEGIN discogsinfo -->
+    <!-- BEGIN discoginfo -->
     <div class="col-md-6">
         <a href="http://discogs.com{results.uri}" target="_blank">
             <img class="img-responsive" src="{results.thumb}" title="{results.catno}" />
@@ -11,5 +11,5 @@
             </ul>
         </a>
     </div>
-    <!-- END discogsinfo -->
+    <!-- END discoginfo -->
 </div>
