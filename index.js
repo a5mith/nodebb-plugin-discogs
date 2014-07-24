@@ -68,7 +68,7 @@ var getDiscog = function(discogsKey, callback) {
     console.log('getting discog info', discogNum);
 
     request.get({
-        url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release'
+        url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1'
     }, function(err, response, body) {
         if (response.statusCode === 200) {
             callback(null, JSON.parse(body));
