@@ -62,7 +62,6 @@ Embed.parse = function(raw, callback) {
         }
     });
 };
-var client = getDiscog({userAgent: '35hz.co.uk'});
 
 var getDiscog = function(discogsKey, callback) {
     var discogNum = discogsKey.split('#')[1];
