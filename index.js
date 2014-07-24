@@ -77,17 +77,19 @@ var getDiscog = function(discogsKey, callback) {
             console.log('Received 200 Response - Looking Good');
             var results = JSON.parse(body),
                 returnData = {
-                    uri: results.uri,
-                    thumbnail: results.thumb,
-                    catno: results.catno,
-                    title: results.title,
-                    style: results.style,
-                    label: results.label,
-                    year: results.year
+                    results: {
+                        uri: results.uri,
+                        thumbnail: results.thumb,
+                        catno: results.catno,
+                        title: results.title,
+                        style: results.style,
+                        label: results.label,
+                        year: results.year
+                    }
                 };
 
             callback(null, returnData);
-            console.log('Data returned');
+            console.log('returnData', returnData);
 
         } else {
             console.log(err, response);
