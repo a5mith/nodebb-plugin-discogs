@@ -70,6 +70,7 @@ var getDiscog = function(discogsKey, callback) {
     request.get({
         url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1',
         headers: {
+            'accept-encoding': 'gzip',
             'User-Agent': '35hz'
         }
     }, function(err, response, body) {
