@@ -9,7 +9,7 @@
         "less/default.less"
     ],
     "hooks": [
-        { "hook": "filter:app.load", "method": "init" },
+        { "hook": "static:app.load", "method": "init" },
         { "hook": "filter:post.parse", "method": "parse", "priority": 6 }
     ],
     "compatibility": "~0.5.0"

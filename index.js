@@ -68,30 +68,29 @@ var getDiscog = function(discogsKey, callback) {
     console.log('getting discog info', discogNum);
 
     request.get({
-        url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1',
+        url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1&f=json',
         headers: {
             'accept-encoding': 'gzip',
             'User-Agent': '35hz'
-        }
+        },
+        encoding: null
+
     }, function(err, response, body) {
-        if (response.statusCode === 200) {
-            console.log('Received 200 Response - Looking Good');
-            var results = JSON.parse(body),
+        if (!err && response.statusCode === 200) {
+            callback(null, JSON.parse(body)),
                 returnData = {
                     results: {
-                        uri: results.uri,
-                        thumbnail: results.thumb,
-                        catno: results.catno,
-                        title: results.title,
-                        style: results.style,
-                        label: results.label,
-                        year: results.year
+                        uri: results[0].uri,
+                        thumbnail: results[0].thumb,
+                        catno: results[0].catno,
+                        title: results[0].title,
+                        style: results[0].style,
+                        label: results[0].label,
+                        year: results[0].year
                     }
                 };
 
             callback(null, returnData);
-            console.log('returnData', returnData);
-
         } else {
             console.log(err, response);
         }
