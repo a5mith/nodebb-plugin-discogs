@@ -11,6 +11,10 @@ var	request = require('request'),
     cache, appModule;
 
 Embed.init = function(app, middleware, controllers, callback) {
+    function render(req, res, next) {
+        res.render('partials/discog-block', {});
+    }
+
     appModule = app;
 
     callback();

@@ -12,7 +12,7 @@
     "plugin",
     "github"
   ],
-  "author": "Julian Lam <julian@designcreateplay.com>",
+  "author": "Aaron Smith <35hzcommunity+plugins@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/a5mith/nodebb-plugin-discogs/issues"
