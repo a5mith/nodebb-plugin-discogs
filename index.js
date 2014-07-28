@@ -1,5 +1,3 @@
-/* jshint indent: 4 */
-
 var	request = require('request'),
     async = module.parent.require('async'),
     winston = module.parent.require('winston'),
@@ -75,13 +73,13 @@ var getDiscog = function(discogsKey, callback) {
         url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1',
         headers: {
             'accept-encoding': 'gzip',
-            'User-Agent': '35hzMusic'
+            'User-Agent': '35hzMusicDiscogs/1.0 +http://35hz.co.uk'
         },
         encoding: null
 
     }, function(err, response, body) {
         if (!err && response.statusCode === 200) {
-            callback(null, JSON.parse(body)),
+            callback(null, body),
                 returnData = {
                     results: {
                         uri: results[0].uri,
