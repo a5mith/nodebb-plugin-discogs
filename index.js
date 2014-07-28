@@ -15,7 +15,6 @@ var getDiscog = function(discogsKey, callback) {
     request.get({
         url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1&f=json',
         headers: {
-            'accept-encoding': 'gzip',
             'User-Agent': '35hzMusicDiscogs/1.0 +http://35hz.co.uk'
         },
         encoding: null
@@ -34,7 +33,7 @@ var getDiscog = function(discogsKey, callback) {
                         year: results[0].year
                     }
                 };
-            console.log(err, response, body);
+            console.log(err, response, returnData);
             callback(null, returnData, body);
         } else {
             console.log(err, response);
