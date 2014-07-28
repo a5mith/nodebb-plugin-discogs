@@ -22,7 +22,7 @@ var getDiscog = function(discogsKey, callback) {
 
     }, function(err, response, body) {
         if (!err && response.statusCode === 200) {
-            var results = JSON.parse(body),
+            var results = (body),
                 returnData = {
                     results: {
                         uri: results[0].uri,
@@ -34,7 +34,8 @@ var getDiscog = function(discogsKey, callback) {
                         year: results[0].year
                     }
                 };
-            callback(null, returnData);
+            console.log(err, response, returnData, body);
+            callback(null, returnData, body);
         } else {
             console.log(err, response);
         }
