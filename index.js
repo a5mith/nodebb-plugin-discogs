@@ -34,7 +34,7 @@ var getDiscog = function(discogsKey, callback) {
                         year: results[0].year
                     }
                 };
-            console.log(err, response, returnData, body);
+            console.log(err, response, body);
             callback(null, returnData, body);
         } else {
             console.log(err, response);
