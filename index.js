@@ -75,7 +75,7 @@ var getDiscog = function(discogsKey, callback) {
         url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1&f=json',
         headers: {
             'accept-encoding': 'gzip',
-            'User-Agent': '35hz'
+            'User-Agent': '35hzMusic'
         },
         encoding: null
 
