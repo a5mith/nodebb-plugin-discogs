@@ -93,8 +93,6 @@ var getDiscog = function(discogsKey, callback) {
                         year: results[0].year
                     }
                 };
-
-            callback(null, returnData);
         } else {
             console.log(err, response);
         }
