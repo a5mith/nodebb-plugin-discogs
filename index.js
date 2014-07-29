@@ -17,7 +17,10 @@ var getDiscog = function(discogsKey, callback) {
         headers: {
             'User-Agent': '35hzMusicDiscogs/1.0 +http://35hz.co.uk'
         },
-        q: '' + discogNum + ''
+        data: {
+            q: '' + discogNum + ''
+        },
+        per_page: '1'
 },
 
         function(err, response, body) {
@@ -25,15 +28,15 @@ var getDiscog = function(discogsKey, callback) {
             console.log('connected...')
             var results = (body),
                 results = {
-                    results: {
-                        uri: results.uri,
+                    results: [{
+                        uri: results[0].uri,
                         thumbnail: results[0].thumb,
                         catno: results[0].catno,
                         title: results[0].title,
                         style: results[0].style,
                         label: results[0].label,
                         year: results[0].year
-                    }
+                    }]
                 };
             console.log(results)
             callback(null, results);
