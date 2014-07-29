@@ -26,7 +26,7 @@ var getDiscog = function(discogsKey, callback) {
             var results = (body),
                 results = {
                     results: {
-                        uri: results[0].uri,
+                        uri: results.uri,
                         thumbnail: results[0].thumb,
                         catno: results[0].catno,
                         title: results[0].title,
