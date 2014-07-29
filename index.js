@@ -19,7 +19,7 @@ var getDiscog = function(discogsKey, callback) {
         },
         dataType: 'json',
         data: {
-            q: '' + discogNum + ''
+            q: ''+ discogNum +''
         },
         per_page: '1'
 
