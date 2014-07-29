@@ -23,7 +23,9 @@ var getDiscog = function(discogsKey, callback) {
         },
         per_page: '1'
 
-    }, function(err, response, body) {
+},
+
+        function(err, response, body) {
         if (!err && response.statusCode === 200) {
             console.log('connected...')
             var results = (body),
@@ -38,6 +40,7 @@ var getDiscog = function(discogsKey, callback) {
                         year: results[0].year
                     }
                 };
+            console.log(results,  body)
             callback(null, results);
         } else {
             console.log(err, response);
