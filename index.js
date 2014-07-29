@@ -17,17 +17,19 @@ var getDiscog = function(discogsKey, callback) {
         headers: {
             'User-Agent': '35hzMusicDiscogs/1.0 +http://35hz.co.uk'
         },
+        dataType: 'json',
         data: {
             q: '' + discogNum + ''
         },
         per_page: '1'
+
 },
 
         function(err, response, body) {
         if (!err && response.statusCode === 200) {
             console.log('connected...')
             var results = (body),
-                results = {
+                returnData = {
                     results: [{
                         uri: results[0].uri,
                         thumbnail: results[0].thumb,
