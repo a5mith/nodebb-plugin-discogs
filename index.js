@@ -21,7 +21,6 @@ var getDiscog = function(discogsKey, callback) {
 
     }, function(err, response, body) {
         if (!err && response.statusCode === 200) {
-            console.log(response)
             var results = (body),
                 returnData = {
                     results: {
