@@ -13,11 +13,15 @@ var getDiscog = function(discogsKey, callback) {
     console.log('getting discog info', discogNum);
 
     request.get({
-        url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1&f=json',
+        url: 'http://api.discogs.com/database/search',
         headers: {
             'User-Agent': '35hzMusicDiscogs/1.0 +http://35hz.co.uk'
         },
-        encoding: null
+        dataType: 'json',
+        data: {
+            q: '' + discogNum + ''
+        },
+        per_page: '1'
 
     }, function(err, response, body) {
         if (!err && response.statusCode === 200) {
