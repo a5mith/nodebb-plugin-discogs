@@ -25,7 +25,7 @@ var getDiscog = function(discogsKey, callback) {
             console.log('connected...')
             var results = (body),
                 results = {
-                    results: [{
+                    results: {
                         uri: results[0].uri,
                         thumbnail: results[0].thumb,
                         catno: results[0].catno,
@@ -33,7 +33,7 @@ var getDiscog = function(discogsKey, callback) {
                         style: results[0].style,
                         label: results[0].label,
                         year: results[0].year
-                    }]
+                    }
                 };
             console.log(results)
             callback(null, results);
