@@ -18,6 +18,7 @@ var getDiscog = function(discogsKey, callback) {
             'User-Agent': '35hzMusicDiscogs/1.0 +http://35hz.co.uk'
         },
         dataType: 'json',
+        type: 'release',
         data: {
             q: ''+ discogNum +''
         },
