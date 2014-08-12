@@ -1,7 +1,8 @@
 <script>
     $(window).on('action:widgets.loaded', function() {
-        var imageUrl = meta;
-        imageUrl.replace('http://api.discogs.com/image/R-90', 'http://s.pixogs.com/image/R');
+        $('img[src="http://api.discogs.com/image/R-90"]').each(function(){
+            $(this).attr("src","http://s.pixogs.com/image/R");
+        });
     });
 </script>
 <div class="row">
