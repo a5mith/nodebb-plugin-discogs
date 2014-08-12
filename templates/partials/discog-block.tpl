@@ -1,3 +1,9 @@
+<script>
+    $(window).on('action:widgets.loaded', function() {
+        var imageUrl = meta;
+        imageUrl.replace('http://api.discogs.com/image/R-90', 'http://s.pixogs.com/image/R');
+    });
+</script>
 <div class="row">
     <!-- BEGIN discoginfo -->
         <div class="col-md-6">
