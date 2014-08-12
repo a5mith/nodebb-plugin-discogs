@@ -20,28 +20,27 @@ var getDiscog = function(discogsKey, callback) {
         dataType: 'json',
         type: 'release',
         data: {
-            q: ''+ discogNum +''
-        },
-        per_page: '1'
+            q: ''+ discogNum +'',
+            per_page: '1'
+        }
+    },
 
-},
-
-        function(err, response, body) {
+        function (err, response, body) {
         if (!err && response.statusCode === 200) {
             console.log('connected...')
-            var results = (body),
-                returnData = {
-                    results: [{
-                        uri: results[0].uri,
-                        thumbnail: results[0].thumb,
-                        catno: results[0].catno,
-                        title: results[0].title,
-                        style: results[0].style,
-                        label: results[0].label,
-                        year: results[0].year
-                    }]
-                };
-            console.log(results)
+                var results = (body),
+                    returnData = {
+                        results: [{
+                            uri: results[0].uri,
+                            thumbnail: results[0].thumb,
+                            catno: results[0].catno,
+                            title: results[0].title,
+                            style: results[0].style,
+                            label: results[0].label,
+                            year: results[0].year
+                        }]
+                    };
+                console.log(results)
             callback(null, results);
         } else {
             console.log(err, response);
