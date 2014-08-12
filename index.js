@@ -99,6 +99,14 @@
         });
     };
 
+    var imageUrl = {},
+        imageUrl = 'http://s.pixogs.com/image/R-150-$1';
+
+    imageUrl.parse = function(postContent, callback) {
+        postContent = postContent.replace(/<a href="(?:http?:\/\/)?(?:api\.discogs\.com)\/image\/R\-90\-?(.+)">.+<\/a>/g, embed);
+        callback(null, postContent);
+    };
+
     // Initial setup
     cache = require('lru-cache')({
         maxAge: 1000*60*60*24,
