@@ -99,6 +99,15 @@
         });
     };
 
+    var DiscogsImage = {},
+        embed = 'http://s.pixogs.com/image/R-.';
+
+
+    DiscogsImage.parse = function(postContent, callback) {
+        postContent = postContent.replace(/(?:http?:\/\/)?(?:api\.discogs\.com)\/image\/R\-90\-?(.+)">.+/g, embed);
+        callback(null, postContent);
+    };
+
 
     // Initial setup
     cache = require('lru-cache')({
