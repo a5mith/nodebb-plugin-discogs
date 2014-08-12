@@ -20,7 +20,7 @@ var getDiscog = function(discogsKey, callback) {
         dataType: 'json',
         type: 'release',
         data: {
-            q: ''+ discogNum +'',
+            catno: ''+ discogNum +'',
             per_page: '1'
         }
     },
