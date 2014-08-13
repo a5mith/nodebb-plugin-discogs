@@ -103,7 +103,7 @@
         embed = 'http://s.pixogs.com/image/R-.';
 
 
-    var DiscogsImgUrl = DiscogsImage;
+    var DiscogsImgUrl = DiscogsImgUrl;
     DiscogsImgUrl.replace('http://api.discogs.com/image/R-90-', 'http://s.pixogs.com/image/R-');
 
 
