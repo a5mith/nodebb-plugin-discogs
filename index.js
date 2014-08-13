@@ -36,7 +36,7 @@
                     year: albumData.year
                 });
             } else {
-                console.log(err, response);
+                callback(err);
             }
         });
     };
