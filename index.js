@@ -99,16 +99,6 @@
         });
     };
 
-    var DiscogsImgUrl = {},
-        embed = 'http://s.pixogs.com/image/R-.';
-
-
-    var DiscogsImgUrl = DiscogsImgUrl;
-    DiscogsImgUrl.replace('http://api.discogs.com/image/R-90-', 'http://s.pixogs.com/image/R-');
-
-
-
-
     // Initial setup
     cache = require('lru-cache')({
         maxAge: 1000*60*60*24,
