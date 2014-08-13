@@ -28,7 +28,7 @@
 
                 callback(null, {
                     uri: albumData.uri,
-                    thumbnail: albumData.thumb.replace('api.discogs.com/image/R-90-', 's.pixogs/image/R-'),
+                    thumbnail: albumData.thumb.replace('api.discogs.com/image/R-90-', 's.pixogs.com/image/R-'),
                     catno: albumData.catno,
                     title: albumData.title,
                     style: Array.isArray(albumData.style) ? albumData.style[0] : albumData.style,
