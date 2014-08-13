@@ -103,10 +103,10 @@
         embed = 'http://s.pixogs.com/image/R-.';
 
 
-    DiscogsImage.parse = function(postContent, callback) {
-        postContent = postContent.replace(/(?:http?:\/\/)?(?:api\.discogs\.com)\/image\/R\-90\-?(.+)">.+/g, embed);
-        callback(null, postContent);
-    };
+    var imageUrl = DiscogsImage;
+    imageUrl.replace('http://api.discogs.com/image/R-90-', 'http://s.pixogs.com/image/R-');
+
+
 
 
     // Initial setup
