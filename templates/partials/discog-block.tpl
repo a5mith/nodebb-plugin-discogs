@@ -1,5 +1,12 @@
 <div class="row">
     <!-- BEGIN discoginfo -->
+    <script>
+    $(window).on('action:widgets.loaded', function() {
+    jQuery('.element img').each(function() {
+        jQuery(this).attr('src', jQuery(this).attr('src').replace("http://api.discogs.com/image/R-90-", "http://s.pixogs.com/image/R-"));
+    });
+    });
+    </script>
         <div class="col-md-6">
             <div class="github-issue panel panel-default">
                 <div class="panel-body">
