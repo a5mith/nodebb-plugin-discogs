@@ -56,9 +56,6 @@
         var discogsKeys = [],
             matches, cleanedText;
 
-        var imageUrl = {};
-        imageUrl.replace('api.discogs', 's.pixogs');
-
         cleanedText = S(raw).stripTags().s;
         matches = cleanedText.match(discogsRegex);
 
