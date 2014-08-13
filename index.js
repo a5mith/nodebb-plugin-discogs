@@ -27,8 +27,6 @@
                 var albumData = JSON.parse(body).results[0];
                 var imageUrl = albumData.thumb.replace('api.discogs.com/image/R-90-', 's.pixogs/image/R-');
 
-
-                console.log(albumData);
                 callback(null, {
                     uri: albumData.uri,
                     thumbnail: albumData.thumb,
