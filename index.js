@@ -25,11 +25,10 @@
         }, function (err, response, body) {
             if (!err && response.statusCode === 200) {
                 var albumData = JSON.parse(body).results[0];
-                var imageUrl = albumData.thumb.replace('api.discogs.com/image/R-90-', 's.pixogs/image/R-');
 
                 callback(null, {
                     uri: albumData.uri,
-                    thumbnail: albumData.thumb,
+                    thumbnail: albumData.thumb.replace('api.discogs.com/image/R-90-', 's.pixogs/image/R-'),
                     catno: albumData.catno,
                     title: albumData.title,
                     style: Array.isArray(albumData.style) ? albumData.style[0] : albumData.style,
