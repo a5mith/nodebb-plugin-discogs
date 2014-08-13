@@ -25,6 +25,7 @@
         }, function (err, response, body) {
             if (!err && response.statusCode === 200) {
                 var albumData = JSON.parse(body).results[0];
+                var imageUrl = albumData.thumb.replace('api.discogs.com/image/R-90-', 's.pixogs/image/R-');
 
                 console.log(albumData);
                 callback(null, {
@@ -58,6 +59,8 @@
 
         cleanedText = S(raw).stripTags().s;
         matches = cleanedText.match(discogsRegex);
+
+
 
         if (matches && matches.length) {
             matches.forEach(function(match) {
