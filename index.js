@@ -99,12 +99,12 @@
         });
     };
 
-    var DiscogsImage = {},
+    var DiscogsImgUrl = {},
         embed = 'http://s.pixogs.com/image/R-.';
 
 
-    var imageUrl = DiscogsImage;
-    imageUrl.replace('http://api.discogs.com/image/R-90-', 'http://s.pixogs.com/image/R-');
+    var DiscogsImgUrl = DiscogsImage;
+    DiscogsImgUrl.replace('http://api.discogs.com/image/R-90-', 'http://s.pixogs.com/image/R-');
 
 
 
