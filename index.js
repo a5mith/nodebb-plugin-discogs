@@ -14,7 +14,6 @@
 
     var getDiscog = function(discogsKey, callback) {
         var discogNum = discogsKey.split('#')[1];
-        winston.info('[discogs] Retrieving info: ' + discogNum);
 
         request.get({
             url: 'http://api.discogs.com/database/search?catno=' + discogNum + '&type=release&per_page=1',
