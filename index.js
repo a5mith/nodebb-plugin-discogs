@@ -26,7 +26,11 @@
             if (!err && response.statusCode === 200) {
                 var albumData = JSON.parse(body).results[0];
 
-                callback(null, {
+                if (!albumData) {
+                    return callback(null, {});
+                }
+
+                    callback(null, {
                     uri: albumData.uri,
                     thumbnail: albumData.thumb.replace('api.discogs.com/image/R-90-', 's.pixogs.com/image/R-'),
                     catno: albumData.catno,
