@@ -2,6 +2,7 @@
     "use strict";
     /* jshint indent: 4 */
 
+
     var	request = require('request'),
         async = module.parent.require('async'),
         winston = module.parent.require('winston'),
@@ -44,21 +45,22 @@
         });
     };
 
-    Embed.init = function(app, middleware, controllers, callback) {
+    Embed.init = function(data, callback) {
         function render(req, res, next) {
             res.render('partials/discog-block', {});
         }
 
-        appModule = app;
+        appModule = data.router;
 
         callback();
     };
 
-    Embed.parse = function(raw, callback) {
+    Embed.parse = function(data, callback) {
         var discogsKeys = [],
+            raw = typeof data !== 'object',
             matches, cleanedText;
 
-        cleanedText = S(raw).stripTags().s;
+        cleanedText = S((raw ? data : data.postData.content)).stripTags().s;
         matches = cleanedText.match(discogsRegex);
 
 
@@ -94,11 +96,16 @@
                 appModule.render('partials/discog-block', {
                     discoginfo: discoginfo
                 }, function(err, html) {
-                    callback(null, raw += html);
+                    if (raw) {
+                    var payload = data += html;
+                    } else {
+                    data.postData.content += html;
+                    }
+                    callback(null, payload || data);
                 });
             } else {
                 winston.warn('Encountered an error parsing discog embed code, not continuing');
-                callback(null, raw);
+                callback(null, data);
             }
         });
     };

@@ -1,6 +1,9 @@
 {
   "name": "nodebb-plugin-discogs",
-  "version": "0.0.1",
+  "version": "0.1.1",
+    "nbbpm": {
+        "compatibility": "^0.6.0"
+    },
   "description": "Turns a short code (dc#BETALP07) into a card containing full info on that release.",
   "main": "index.js",
   "repository": {

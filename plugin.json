@@ -10,7 +10,6 @@
     ],
     "hooks": [
         { "hook": "static:app.load", "method": "init" },
-        { "hook": "filter:post.parse", "method": "parse", "priority": 6 }
-    ],
-    "compatibility": "~0.5.0"
+        { "hook": "filter:parse.post", "method": "parse" }
+    ]
 }
